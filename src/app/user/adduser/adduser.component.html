@@ -1,0 +1,62 @@
+<div class="mb-4">
+	<span class="title-1">Tambah User</span>
+</div>
+
+<div class="row m-0">
+	<div class="col-md-2 col-4 pl-0 pt-2"><label class="text-bold">Username</label></div>
+	<div class="col-md-10 col-8 p-0 mb-3"><input [(ngModel)]="register.username" type="text" name="" class="form-control col-md-4 form-pa"></div>
+</div>
+<div class="row m-0">
+	<div class="col-md-2 col-4 pl-0 pt-2"><label class="text-bold">Password</label></div>
+	<div class="col-md-10 col-8 p-0 mb-3"><input [(ngModel)]="register.password" type="password" name="" class="form-control col-md-4 form-pa"></div>
+</div>
+<div class="row m-0">
+	<div class="col-md-2 col-4 pl-0 pt-2"><label class="text-bold">Otoritas</label></div>
+	<div class="col-md-10 col-8 p-0 mb-3">
+		<div class="radio-btn">
+			<input type="radio" id="admin" name="otoritas" (click)="clickadmin()">
+			<label for="admin" class="pr-3">Administrator</label>
+		</div>
+		<div class="table-responsive mt-3"  *ngIf="register.jenis_user == '1'">   
+			<table class="table text-center table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Divisi</th>
+						<th>Tambah</th>
+						<th>Hapus</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let item2 of aksi;let i=index">
+						<th scope="row" class="p-0">
+							<input type="checkbox" id="{{item2.id}}" (change)="datachanged($event, item2.id)">
+							<label for="{{item2.id}}" class="pr-3"></label>
+						</th>
+						<td>{{item2.name}}</td>
+						<td *ngFor="let itemaksi of aksi[i].value" class="p-0">
+							<input type="checkbox" id="aksi{{item2.id}}{{itemaksi.id}}" [disabled]="toogleBool" (change)="aksichanged($event, itemaksi.id, item2)">
+							<label for="aksi{{item2.id}}{{itemaksi.id}}" class="pr-3"></label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="radio-btn">
+			<input type="radio" id="operator" name="otoritas" (click)="clickoperator()">
+			<label for="operator" class="pr-3">Operator</label>
+		</div>
+		<div class="ml-3" id="form-operator" *ngIf="register.jenis_user == '2'">
+			<div class="radio-btn" *ngFor="let item3 of divisi_operator">
+				<input type="radio" id="{{item3.id}}" name="radio-divisi" (change)="datachangedoperator($event, item3.id)">
+				<label for="{{item3.id}}" class="pr-3">{{item3.name}}</label>
+			</div>
+		</div> 
+
+	</div>
+</div>
+<div class="text-right mt-3">
+	<a class="btn btn-pa" (click)="goregister()">Verify</a>
+</div>	

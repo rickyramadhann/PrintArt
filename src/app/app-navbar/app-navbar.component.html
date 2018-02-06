@@ -1,0 +1,73 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3 class="m-0 text-center">PrintArt</h3>
+    <strong>PA</strong>
+  </div>
+  <div class="sidebar-user">
+    <div class="avatar">
+      <img src="assets/image/avatar.jpg" alt="...">
+    </div>
+    <div class="title-job">
+      <span class="m-0"><strong>Chelsea Islan</strong></span>
+      <span class="m-0">Super Admin</span>
+    </div>
+  </div>
+  <ul class="list-unstyled side-nav-pa">
+    <li [routerLinkActive]="['active']">
+      <a  routerLink="/index"><i class="material-icons">dashboard</i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a routerLink="/receptionist"><i class="material-icons">dashboard</i>
+        <span>Reception</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a routerLink="/designer"><i class="material-icons">color_lens</i>
+        <span>Designer</span>
+      </a>
+    </li>
+    <li>
+      <a  (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"><i class="material-icons">&#xE8F9;</i>
+        <span>Produksi</span>
+      </a>
+      <ul class="collapse list-unstyled" id="collapseExample" [ngbCollapse]="isCollapsed">
+        <li [routerLinkActive]="['active']"><a routerLink="/lowres">Low Res</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/highres">High Res</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/laser">Laser</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/offset">Offset</a></li>
+      </ul>
+    </li>
+    <li [routerLinkActive]="['active']" class="last-li">
+      <a routerLink="/delivery"><i class="material-icons">verified_user</i>
+        <span>Delivery</span>
+      </a>
+    </li>
+    <li class="side-title">
+      <span>Support</span>
+    </li>
+    <li>
+      <a (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample2"><i class="material-icons">build</i>
+        <span>Setting</span>
+      </a>
+      <ul class="collapse list-unstyled" id="collapseExample2" [ngbCollapse]="isCollapsed2">
+        <li [routerLinkActive]="['active']"><a routerLink="/user">Users</a></li>
+        <li><a >Files</a></li>
+        <li><a >Material</a></li>
+        <li><a >Costumer</a></li>
+        <li><a >Role</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#report" data-toggle="collapse" aria-expanded="false"><i class="material-icons">&#xE873;</i>
+        <span>Report</span>
+      </a>
+      <ul class="collapse list-unstyled" id="report">
+        <li><a >Complaint</a></li>
+        <li><a >Verifikasi</a></li>
+        <li><a >Note</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
