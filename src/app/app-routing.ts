@@ -25,20 +25,20 @@ import {userRoutes} from './user/user.router'
 
 const routes:Routes=[
 
-{path: '', component: IndexComponent, canActivate: [AuthGuard] },
+{path: '', component: IndexComponent,  },
 {path:'login', component: LoginComponent },
-{path:'index', component:IndexComponent, canActivate: [AuthGuard]},
-{path:'receptionist', component:ReceptionComponent,canActivate: [AuthGuard]},
-{path:'designer', component:DesignerComponent, canActivate: [AuthGuard]},
+{path:'index', component:IndexComponent, },
+{path:'receptionist', component:ReceptionComponent,},
+{path:'designer', component:DesignerComponent, },
 ...lowresRoutes,
 ...userRoutes,
 
 
-{path:'highres', component:HighresComponent, canActivate: [AuthGuard]},
-{path:'laser', component:LaserComponent, canActivate: [AuthGuard]},
-{path:'offset', component:OffsetComponent, canActivate: [AuthGuard]},
-{path:'delivery', component:DeliveryComponent, canActivate: [AuthGuard]},
-{path:'user', component:UserComponent, canActivate: [AuthGuard]},
+{path:'highres', component:HighresComponent, },
+{path:'laser', component:LaserComponent, },
+{path:'offset', component:OffsetComponent, },
+{path:'delivery', component:DeliveryComponent, },
+{path:'user', component:UserComponent, },
 { path: '**', redirectTo: '' }
 
 ]
