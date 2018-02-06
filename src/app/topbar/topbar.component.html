@@ -10,10 +10,10 @@
 					<li class="nav-item d-flex align-items-center">
 						<input id="search" type="text" placeholder="Search..."><button id="submit" value="0"><i class="material-icons">&#xE8B6;</i></button>
 					</li>
-					<li class="nav-item dropdown"> 
-						<a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+					<li class="nav-item dropdown" ngbDropdown > 
+						<a id="notifications" ngbDropdownToggle rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
 							<i class="fa fa-bell-o"></i><span class="badge bg-red">12</span></a>
-							<ul aria-labelledby="notifications" class="dropdown-menu">
+							<ul ngbDropdownMenu aria-labelledby="notifications" class="dropdown-menu" s>
 								<li>
 									<a rel="nofollow" href="#" class="dropdown-item"> 
 										<div class="notification">

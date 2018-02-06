@@ -50,3 +50,6 @@ const routes:Routes=[
 export class AppRoutingModule { }
 
 export const routingComponents = [IndexComponent, ReceptionComponent, DesignerComponent,LowresComponent,LowresRipComponent,HighresComponent,LaserComponent,OffsetComponent,DeliveryComponent, UserComponent];
+
+
+//  canActivate: [AuthGuard]

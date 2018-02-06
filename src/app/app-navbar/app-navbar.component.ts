@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppNavbarComponent implements OnInit {
 	public menu;
-	public isCollapsed = false;
-	public isCollapsed2 = false;
+	public isCollapsed = true;
+	public isCollapsed2 = true;
 	constructor() { 
 		this.menu=[
 		{id:1},

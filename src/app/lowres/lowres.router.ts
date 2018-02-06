@@ -6,7 +6,7 @@ import { LowresRipDetailComponent }    from '../lowres/lowres-rip-detail/lowres-
 
 // Route Configuration
 export const lowresRoutes: Routes = [
-{ path: 'lowres', component: LowresComponent, canActivate: [AuthGuard] },
-{ path: 'lowres/'+'lowres-rip', component: LowresRipComponent, canActivate: [AuthGuard] },
-{ path: 'lowres/'+'lowres-rip-detail', component: LowresRipDetailComponent,  canActivate: [AuthGuard]}
+{ path: 'lowres', component: LowresComponent },
+{ path: 'lowres/'+'lowres-rip', component: LowresRipComponent },
+{ path: 'lowres/'+'lowres-rip-detail', component: LowresRipDetailComponent,}
 ];
