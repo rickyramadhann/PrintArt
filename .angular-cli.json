@@ -18,6 +18,10 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+      "scripts": [
+
+      ],
+
       "styles": [
         "./styles.css",
         "./assets/css/bootstrap-grid.min.css",
@@ -27,10 +31,7 @@
         "./assets/css/import.css",
         "./assets/css/bootstrap-select.css"
       ],
-      "scripts": [
-       
-
-      ],
+      
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
