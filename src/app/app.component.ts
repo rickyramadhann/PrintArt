@@ -9,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
 	title = 'app';
-	private statuslogin
+	public statuslogin
 	constructor(private loadingSpinner:Ng4LoadingSpinnerService) { 
 		if(localStorage.getItem('token')){
 			this.statuslogin = true;
