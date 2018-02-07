@@ -5,7 +5,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 
 // Route Configuration
 export const userRoutes: Routes = [
-{ path: 'user', component: UserComponent,canActivate: [AuthGuard]  },
-{ path: 'user/'+'adduser', component: AdduserComponent, canActivate: [AuthGuard]},
+{ path: 'user', component: UserComponent,  },
+{ path: 'user/'+'adduser', component: AdduserComponent, },
 
 ];

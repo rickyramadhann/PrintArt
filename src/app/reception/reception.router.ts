@@ -7,8 +7,8 @@ import { ReceptionComponent }from './reception.component';
 
 // Route Configuration
 export const receptionRoutes: Routes = [
-{ path: 'reception', component: ReceptionComponent,canActivate: [AuthGuard] },
-{ path: 'reception/'+'addorder', component: AddorderComponent,canActivate: [AuthGuard] },
-{ path: 'reception/'+'addcomplaint', component: AddcomplaintComponent,canActivate: [AuthGuard]},
-{ path: 'reception/'+'addinvoice', component: AddinvoiceComponent,canActivate: [AuthGuard]},
+{ path: 'reception', component: ReceptionComponent },
+{ path: 'reception/'+'addorder', component: AddorderComponent },
+{ path: 'reception/'+'addcomplaint', component: AddcomplaintComponent},
+{ path: 'reception/'+'addinvoice', component: AddinvoiceComponent},
 ];
