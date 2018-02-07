@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { ExpandableListModule } from 'angular2-expandable-list';
 import { ChartModule } from 'angular2-chartjs';
@@ -39,6 +41,9 @@ import { LowresDeliverComponent } from './lowres-deliver/lowres-deliver.componen
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
+import { AddorderComponent } from './reception/addorder/addorder.component';
+import { AddcomplaintComponent } from './reception/addcomplaint/addcomplaint.component';
+import { AddinvoiceComponent } from './reception/addinvoice/addinvoice.component';
 
 
 @NgModule({
@@ -65,13 +70,16 @@ import { AdduserComponent } from './user/adduser/adduser.component';
 	LoginComponent,
 	UserComponent,
 	AdduserComponent,
+	AddorderComponent,
+	AddcomplaintComponent,
+	AddinvoiceComponent,
 
 	// DashboardComponent,
 	// AlertComponent,
 	
 	],
 	imports: [
-	BrowserModule,AppRoutingModule,BrowserAnimationsModule,Ng4LoadingSpinnerModule.forRoot(),
+	BrowserModule,AppRoutingModule,BrowserAnimationsModule,Ng4LoadingSpinnerModule.forRoot(),HttpModule,
 	NgbModule.forRoot(),FormsModule,HttpClientModule,MultiselectDropdownModule,ExpandableListModule,ChartModule
 	],
 	providers: [

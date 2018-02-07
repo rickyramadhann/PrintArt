@@ -9,8 +9,16 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
 	title = 'app';
+	private statuslogin
 	constructor(private loadingSpinner:Ng4LoadingSpinnerService) { 
-		
+		if(localStorage.getItem('token')){
+			this.statuslogin = true;
+		}
+		else{
+			this.statuslogin = false;
+		}
+		console.log(this.statuslogin)
+
 	}
 
 	ngOnInit() {
@@ -20,5 +28,23 @@ export class AppComponent {
 				$('#content').toggleClass('active-content');
 			});
 		});
+
+		if(localStorage.getItem('token')){
+			this.statuslogin = true;
+		}
+		else{
+			this.statuslogin = false;
+		}
+		console.log(this.statuslogin)
 	}
+
+	logout(){
+		localStorage.removeItem('currentUser');
+		localStorage.removeItem('token');
+		localStorage.removeItem('id');
+		localStorage.removeItem('username');
+		localStorage.setItem('statuslogin', 'false')
+		this.statuslogin = false;
+	}
+
 }

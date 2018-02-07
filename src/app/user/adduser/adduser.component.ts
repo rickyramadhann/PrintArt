@@ -3,6 +3,9 @@ import * as $ from 'jquery';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IMultiSelectOption,IMultiSelectSettings,IMultiSelectTexts } from 'angular-2-dropdown-multiselect';
 
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
+
 @Component({
 	selector: 'app-adduser',
 	templateUrl: './adduser.component.html',
@@ -79,7 +82,14 @@ export class AdduserComponent implements OnInit {
 
 	
 	goregister(){
-		console.log(this.register)
+		console.log(this.register);
+		this.http.post('http://192.168.100.204/api/auth/register',this.register).subscribe(response=>{
+			console.log('res:', response)
+
+		},error=> {
+			console.log('error')
+		});
+
 
 	}
 
@@ -96,7 +106,7 @@ export class AdduserComponent implements OnInit {
 			this.cbxDivisi.splice(tmp, 1);
 			let tmp2 = this.register.divisi.indexOf(i)
 			this.register.divisi.splice(tmp2,i)
-			
+
 		}
 
 	}
@@ -111,7 +121,7 @@ export class AdduserComponent implements OnInit {
 			this.cbxAksi.splice(tmp, 1)
 		}
 
-		
+
 	}
 
 	merge(){

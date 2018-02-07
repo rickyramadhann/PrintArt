@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReceptionComponent } from './reception/reception.component';
+import { AddcomplaintComponent }    from './reception/addcomplaint/addcomplaint.component';
+import { AddorderComponent }    from './reception/addorder/addorder.component';
+import { AddinvoiceComponent }    from './reception/addinvoice/addinvoice.component';
+
+
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -21,24 +26,25 @@ import { AuthGuard } from './-guards/auth.guard';
 
 import {lowresRoutes} from './lowres/lowres.router'
 import {userRoutes} from './user/user.router'
+import {receptionRoutes} from './reception/reception.router'
 
 
 const routes:Routes=[
 
-{path: '', component: IndexComponent,  },
+{path: '', component: IndexComponent,},
 {path:'login', component: LoginComponent },
-{path:'index', component:IndexComponent, },
-{path:'receptionist', component:ReceptionComponent,},
-{path:'designer', component:DesignerComponent, },
+{path:'index', component:IndexComponent,canActivate: [AuthGuard] },
+{path:'designer', component:DesignerComponent,canActivate: [AuthGuard] },
+...receptionRoutes,
 ...lowresRoutes,
 ...userRoutes,
 
 
-{path:'highres', component:HighresComponent, },
-{path:'laser', component:LaserComponent, },
-{path:'offset', component:OffsetComponent, },
-{path:'delivery', component:DeliveryComponent, },
-{path:'user', component:UserComponent, },
+{path:'highres', component:HighresComponent, canActivate: [AuthGuard]},
+{path:'laser', component:LaserComponent, canActivate: [AuthGuard]},
+{path:'offset', component:OffsetComponent, canActivate: [AuthGuard]},
+{path:'delivery', component:DeliveryComponent, canActivate: [AuthGuard]},
+{path:'user', component:UserComponent,canActivate: [AuthGuard] },
 { path: '**', redirectTo: '' }
 
 ]

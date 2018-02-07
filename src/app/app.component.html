@@ -1,4 +1,5 @@
-<div class="wrapper">
+
+<div class="wrapper" *ngIf="statuslogin ==true">
 	<app-app-navbar></app-app-navbar>
 	<div id="content">
 		<app-topbar></app-topbar>
@@ -7,3 +8,4 @@
 		</div>
 	</div>
 </div>
+<router-outlet *ngIf="statuslogin==false"></router-outlet>
